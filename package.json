@@ -1,0 +1,61 @@
+{
+  "name": "react-native-boilerplate",
+  "version": "0.1.0",
+  "private": true,
+  "engines": {
+    "node": ">=7.6"
+  },
+  "main": "./node_modules/react-native-scripts/build/bin/crna-entry.js",
+  "dependencies": {
+    "expo": "^25.0.0",
+    "react": "16.2.0",
+    "react-native": "0.52.0",
+    "recompose": "^0.26.0",
+    "styled-components": "^3.1.6"
+  },
+  "devDependencies": {
+    "babel-eslint": "^8.2.1",
+    "babel-plugin-module-resolver": "^3.0.0",
+    "eslint": "^4.17.0",
+    "eslint-plugin-flowtype": "^2.42.0",
+    "eslint-plugin-react": "^7.6.1",
+    "eslint-plugin-react-native": "^3.2.1",
+    "flow-bin": "^0.65.0",
+    "husky": "^0.14.3",
+    "jest-expo": "25.0.0",
+    "lint-staged": "^6.1.0",
+    "prettier": "^1.10.2",
+    "react-native-scripts": "1.11.1",
+    "react-test-renderer": "16.2.0",
+    "stylelint": "^8.4.0",
+    "stylelint-config-standard": "^18.0.0",
+    "stylelint-config-styled-components": "^0.1.1",
+    "stylelint-processor-styled-components": "^1.2.1"
+  },
+  "scripts": {
+    "start": "react-native-scripts start",
+    "eject": "react-native-scripts eject",
+    "android": "react-native-scripts android",
+    "ios": "react-native-scripts ios",
+    "test": "node node_modules/jest/bin/jest.js",
+    "lint": "yarn run lint:js",
+    "lint:css": "stylelint './components/**/*.js' './pages/**/*.js'",
+    "lint:eslint": "eslint --ignore-path .gitignore",
+    "lint:js": "yarn run lint:eslint -- . ",
+    "lint:fix": "yarn run lint:js -- --fix",
+    "lint:staged": "lint-staged",
+    "precommit": "yarn run lint:staged",
+    "prettier": "prettier --write '**/*.js'"
+  },
+  "lint-staged": {
+    "*.js": [
+      "prettier --write",
+      "eslint --fix",
+      "git add",
+      "stylelint"
+    ]
+  },
+  "jest": {
+    "preset": "jest-expo"
+  }
+}
